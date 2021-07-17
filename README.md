@@ -57,8 +57,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('me1865@global.org.in', 'Jaabey0*')
-    server.sendmail('me1865@global.org.in', to,content)
+    server.login('youremail-id', 'yourpassword')
+    server.sendmail('youremail-id', to,content)
     server.close()
 
 if __name__ == "__main__":
@@ -88,7 +88,7 @@ if __name__ == "__main__":
             webbrowser.open("gmail.com")
 
         elif 'open linkedin' in query:
-            webbrowser.open("linked.com")
+            webbrowser.open("linkedin.com")
 
         elif 'open my browser' in query:
             speak("opening mozzila...")
@@ -110,7 +110,7 @@ if __name__ == "__main__":
             
 
         elif 'play music' and 'play some music' in query:
-            music_dir =  'E:\\Madhur.S.B\\nEw sOngs\\eng'
+            music_dir =  'E:\\NewFolder\\nEw sOngs\\eng'
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
@@ -120,11 +120,11 @@ if __name__ == "__main__":
         elif 'vs code' in query:
             codePath = "C:\\Users\\mmadh\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
-        elif 'email to divya di' in query:
+        elif 'email to myfriend' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "samarat13@global.org.in"
+                to = "reciever's_email-id"
                 sendEmail(to,content)
                 speak("Your Email has been sent,Sir")
             except Exception as e:
