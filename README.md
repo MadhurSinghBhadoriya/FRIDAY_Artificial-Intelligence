@@ -57,8 +57,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('youremail-id', 'yourpassword')
-    server.sendmail('youremail-id', to,content)
+    server.login('youremail-id', 'yourpassword')   #Your Email-id and Password, needed here.
+    server.sendmail('youremail-id', to,content)    #Your EMail-id, needed.
     server.close()
 
 if __name__ == "__main__":
@@ -110,7 +110,7 @@ if __name__ == "__main__":
             
 
         elif 'play music' and 'play some music' in query:
-            music_dir =  'E:\\NewFolder\\nEw sOngs\\eng'
+            music_dir =  'E:\\NewFolder\\nEw sOngs\\eng'   #Your folder source for music, needed.
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
@@ -124,7 +124,7 @@ if __name__ == "__main__":
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "reciever's_email-id"
+                to = "reciever's_email-id"    #Reciever's Email id needed
                 sendEmail(to,content)
                 speak("Your Email has been sent,Sir")
             except Exception as e:
